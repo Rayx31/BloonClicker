@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloon Clicker: Monkey Mayhem Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <section class="pane left-pane">
+            <div id="stats-top">
+                <h1 id="bloon-count" class="game-font">0 BLOONS</h1>
+                <p id="bps-display" class="game-font" style="font-size: 1.2em; -webkit-text-stroke: 0.8px black;">BPS: <span class="bps-val">0.0</span></p>
+            </div>
+            <div id="main-bloon-container">
+                <div id="main-bloon" class="pop-animation"></div>
+            </div>
+        </section>
+
+        <section class="pane center-pane">
+            <h2 class="game-font title-border">PANEL DE CONTROL</h2>
+            <div class="stats-card game-font">
+                <p>CLICKS: <span id="stat-clicks">0</span></p>
+                <p>MONOS: <span id="stat-monkeys">0</span></p>
+                <p>TIEMPO: <span id="stat-time">0M 0S</span></p>
+            </div>
+            <div id="upgrades-container">
+                <h3 class="game-font title-border" style="font-size: 1.5em;">MEJORAS</h3>
+                <div id="upgrades-grid"></div>
+            </div>
+        </section>
+
+        <section class="pane right-pane">
+            <h2 class="game-font title-border">TIENDA</h2>
+            <div id="buy-selector">
+                <button class="buy-btn active" onclick="setBuyAmount(1)">X1</button>
+                <button class="buy-btn" onclick="setBuyAmount(10)">X10</button>
+                <button class="buy-btn" onclick="setBuyAmount(100)">X100</button>
+            </div>
+            <div id="shop-container"></div>
+        </section>
+    </div>
+
+    <div id="tooltip" class="hidden game-font">
+        <div id="tooltip-name" style="font-size: 1.1em; color: white; margin-bottom: 5px;"></div>
+        <div id="tooltip-desc" style="font-size: 0.8em; color: #E0E0E0; font-family: 'Nunito', sans-serif; -webkit-text-stroke: 0px; text-transform: none;"></div>
+        <div id="tooltip-cost" style="color: #FDD835; margin-top: 5px;"></div>
+    </div>
+
+    <audio id="pop-sound" src="https://www.myinstants.com/media/sounds/pop_1.mp3"></audio>
+    <audio id="buy-sound" src="https://www.myinstants.com/media/sounds/coin_sound.mp3"></audio>
+
+    <script src="game.js"></script>
+</body>
+</html>
